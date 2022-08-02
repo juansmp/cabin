@@ -14,6 +14,7 @@
 
 // xhr.send(data);
 var urlBase = "https://g652512b33ec820-alquilercabanas.adb.ca-toronto-1.oraclecloudapps.com/ords/admin/cabin/"
+var cabinLastId = 0;
 
 function consultar(params) {
   console.log("consultar")
@@ -22,6 +23,7 @@ function consultar(params) {
     type: "GET",
     dataType: "json",
     success: function(response){
+      $("#cuerpoTabla").empty();
       console.log(response);
       response.items.forEach(item => {
         console.log(item);
@@ -32,11 +34,54 @@ function consultar(params) {
         row.append($("<td>").text(item.category_id));
         row.append($("<td>").text(item.name));
         $("#cuerpoTabla").append(row);
+        cabinLastId = item.id;
       });
+      cabinLastId++;
+      $('#id').val(cabinLastId);
     },error: function(error){
-      console.error(error);
+      alert("Error al consultar");
     }
   });
+}
+
+function createCabin() {
+  var cabin = {
+    id: $("#id").val(),
+    brand: $("#brand").val(),
+    rooms: $("#rooms").val(),
+    category_id: $("#category_id").val(),
+    name: $("#name").val(),
+  }
+  $.ajax({
+    url: urlBase + "cabin",
+    type: "POST",
+    dataType: "json",
+    data: cabin,
+    statusCode: {
+      201: function(){
+        alert("Cabina creada");
+        consultar();
+      },
+      400: function(){
+        console.log("Error al crear la cabina, datos incorrectos");
+      },
+      555: function(){
+        console.log("Error al crear la cabina, cabana ya existe");
+      },
+    },
+    error: function(error){
+      if(error.status!=201){
+        alert("Error al crear");
+      }      
+    }
+  });
+}
+
+function cleanFormular() {
+  $("#brand").val("");
+  $("#rooms").val("");
+  $("#category_id").val("");
+  $("#name").val("");
 }
 
 

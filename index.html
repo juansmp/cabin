@@ -11,9 +11,7 @@
     <h2>Hola2</h2>
 </head>
 <style>
-    th{
-        border: solid;
-    }
+    
 </style>
 <body>
     <div class="container-fluid">
@@ -22,8 +20,63 @@
                 <h1>Alquiler de Cabañas body</h1>
             </div>            
         </div>
+        <div class="row">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="id">
+                        ID
+                    </label>
+                    <input type="number" id="id" placeholder="#" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="brand">
+                        Brand
+                    </label>
+                    <input type="text" id="brand" placeholder="Descripcion" class="form-control">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="rooms">
+                        Rooms
+                    </label>
+                    <input type="number" id="rooms" placeholder="Numero de habitaciones" class="form-control">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="category_id">
+                        Category_id
+                    </label>
+                    <input type="number" id="category_id" placeholder="Categoria" class="form-control">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="name">
+                        Name
+                    </label>
+                    <input type="text" id="name" placeholder="Nombre" class="form-control">
+                </div>
+            </div>                    
+        </div>
+
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <button type="button" class="btn btn-outline-primary" onclick="createCabin()
+                ">Registrar</button>                
+                <button type="button" class="btn btn-outline-primary" onclick="cleanFormular()
+                ">Limpiar</button>                
+            </div>
+        </div> 
+        <br>
+        
+
         <div class="row">   
-            <table id="cabin" class="table table-dark table-striped table-hover" style="border: 1px solid green">
+            <table id="cabin" class="table table-dark table-striped table-hover">
                 <thead>
                     <tr>
                         <th>id</th>
