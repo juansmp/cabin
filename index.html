@@ -1,82 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Alquiler de Cabañas</title>
-    <h1>Hola</h1>
-    <h2>Hola2</h2>
-</head>
-<style>
-    
-</style>
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <h1>Alquiler de Cabañas body</h1>
-            </div>            
+    <!-- <h1>Reto 2 </h1> -->
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #edeff0;">
+        <a class="navbar-brand">
+            <!--https://www.xcalibergraphics.com/wp-content/uploads/2018/06/Rustic-Cabin-Rentals.png -->
+            <img src="https://images.vexels.com/media/users/3/207828/isolated/lists/fc5e3398937d8c57c454079e8f01bb53-bosquejo-de-bambu-de-casa.png"
+                width="60" height="60" class="d-inline-block align-top" alt="">
+        </a>
+        <a class="navbar-brand mb-0 h1">
+            <!--https://www.xcalibergraphics.com/wp-content/uploads/2018/06/Rustic-Cabin-Rentals.png -->
+            Alquiler de Cabañas - Reto 2
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(Mostrar Todo)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cabañas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mensajes</a>
+                </li>
+            </ul>
         </div>
+    </nav>
+
+    <nav class="navbar fixed-bottom navbar-light" style="background-color: #edeff0;">
+        <a class="navbar-brand center">
+            Desarrollado por: Juan Morant, Carlos Gómez, Oscar
+        </a>
+    </nav>
+
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <!-- Espacios para evitar  problemas cuando cambia navbar -->
+    <br class="w-100 d-lg-none">
+    <br class="w-100 d-lg-none">
+    <br class="w-100 d-lg-none">
+    <br class="w-100 d-lg-none">
+
+
+    <div class="container-fluid" id="cabinContainer">
         <div class="row">
             <div class="row justify-content-center">
                 <div class="col-3">
-                    <label for="id">
+                    <label for="cabinId">
                         ID
                     </label>
-                    <input type="number" id="id" placeholder="#" class="form-control" readonly>
+                    <input type="number" id="cabinId" placeholder="#" class="form-control" readonly>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-3">
-                    <label for="brand">
+                    <label for="cabinBrand">
                         Brand
                     </label>
-                    <input type="text" id="brand" placeholder="Descripcion" class="form-control">
+                    <input type="text" id="cabinBrand" placeholder="Descripcion" class="form-control">
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-3">
-                    <label for="rooms">
+                    <label for="cabinRooms">
                         Rooms
                     </label>
-                    <input type="number" id="rooms" placeholder="Numero de habitaciones" class="form-control">
+                    <input type="number" id="cabinRooms" placeholder="Numero de habitaciones" class="form-control">
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-3">
-                    <label for="category_id">
+                    <label for="cabinCategory_id">
                         Category_id
                     </label>
-                    <input type="number" id="category_id" placeholder="Categoria" class="form-control">
+                    <input type="number" id="cabinCategory_id" placeholder="Categoria" class="form-control">
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-3">
-                    <label for="name">
+                    <label for="cabinName">
                         Name
                     </label>
-                    <input type="text" id="name" placeholder="Nombre" class="form-control">
+                    <input type="text" id="cabinName" placeholder="Nombre" class="form-control">
                 </div>
-            </div>                    
+            </div>
         </div>
 
         <br>
         <div class="row justify-content-center">
             <div class="col-3">
                 <button type="button" class="btn btn-outline-primary" onclick="createCabin()
-                ">Registrar</button>                
-                <button type="button" class="btn btn-outline-primary" onclick="cleanFormular()
-                ">Limpiar</button>                
+                ">Registrar</button>
+                <button type="button" class="btn btn-outline-primary" onclick="cleanCabinFormular()
+                ">Limpiar</button>
             </div>
-        </div> 
+        </div>
         <br>
-        
 
-        <div class="row">   
-            <table id="cabin" class="table table-dark table-striped table-hover">
+
+        <div class="row justify-content-center">
+            <table id="cabinTable" class="table table-dark table-striped table-hover">
                 <thead>
                     <tr>
                         <th>id</th>
@@ -84,32 +131,265 @@
                         <th>Room</th>
                         <th>Category_id</th>
                         <th>Name</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody id="cuerpoTabla">
+                <tbody id="cabinTableBody">
+                </tbody>
+            </table>
+            <div class="popup" >Click me!
+                <span class="popuptext" id="myPopup">Popup text...
+
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label for="puCabinId">
+                                ID
+                            </label>
+                            <input type="number" id="puCabinId" placeholder="#" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label for="puCabinBrand">
+                                Brand
+                            </label>
+                            <input type="text" id="puCabinBrand" placeholder="Descripcion" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label for="puCabinRooms">
+                                Rooms
+                            </label>
+                            <input type="number" id="puCabinRooms" placeholder="Numero de habitaciones"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label for="puCabinCategory_id">
+                                Category_id
+                            </label>
+                            <input type="number" id="puCabinCategory_id" placeholder="Categoria" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label for="puCabinName">
+                                Name
+                            </label>
+                            <input type="text" id="puCabinName" placeholder="Nombre" class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-success btn-block w-100" onclick="closeUpdatePopupCabin()">Actualizar</button>
+
+
+                </span>
+            </div>
+        </div>
+
+
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+    </div>
+
+
+    <div class="container-fluid" id="categoryContainer">
+        <div class="row">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="categoryId">
+                        ID
+                    </label>
+                    <input type="number" id="categoryId" placeholder="#" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="categoryName">
+                        Name
+                    </label>
+                    <input type="text" id="categoryName" placeholder="Nombre" class="form-control">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="categoryDescription">
+                        Description
+                    </label>
+                    <input type="text" id="categoryDescription" placeholder="Descripcion" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <button type="button" class="btn btn-outline-primary" onclick="createCategory()
+                ">Registrar</button>
+                <button type="button" class="btn btn-outline-primary" onclick="cleanCategoryFormular()
+                ">Limpiar</button>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="row justify-content-center">
+            <table id="categoryTable" class="table table-dark table-striped table-hover">
+                <thead>
                     <tr>
-                        <td>1</td>
-                        <td>cabina</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>cabina</td>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Description</th>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>cabina</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>cabina</td>
-                    </tr>
+                </thead>
+                <tbody id="categoryTableBody">
                 </tbody>
             </table>
         </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
     </div>
+
+
+    <div class="container-fluid" id="clientContainer">
+        <div class="row">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="clientId">
+                        ID
+                    </label>
+                    <input type="number" id="clientId" placeholder="#" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="clientName">
+                        Name
+                    </label>
+                    <input type="text" id="clientName" placeholder="Nombre" class="form-control">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="clientEmail">
+                        Email
+                    </label>
+                    <input type="text" id="clientEmail" placeholder="E-mail" class="form-control">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="clientAge">
+                        Age
+                    </label>
+                    <input type="number" id="clientAge" placeholder="Edad" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <button type="button" class="btn btn-outline-primary" onclick="createClient()
+                ">Registrar</button>
+                <button type="button" class="btn btn-outline-primary" onclick="cleanClientFormular()
+                ">Limpiar</button>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="row justify-content-center">
+            <table id="clientTable" class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody id="clientTableBody">
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+    </div>
+
+
+    <div class="container-fluid" id="messageContainer">
+        <div class="row">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="messageId">
+                        ID
+                    </label>
+                    <input type="number" id="messageId" placeholder="#" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <label for="messageMessagetext">
+                        Messagetext
+                    </label>
+                    <input type="text" id="messageMessagetext" placeholder="Descripción del mensaje"
+                        class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <button type="button" class="btn btn-outline-primary" onclick="createMessage()
+                ">Registrar</button>
+                <button type="button" class="btn btn-outline-primary" onclick="cleanMessageFormular()
+                ">Limpiar</button>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="row justify-content-center">
+            <table id="messageTable" class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Messagetext</th>
+                    </tr>
+                </thead>
+                <tbody id="messageTableBody">
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+    </div>
+
     <script type="text/javascript">
-        console.log("Hola mundo")
+        /* console.log("Hola mundo") */
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
