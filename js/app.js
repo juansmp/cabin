@@ -80,7 +80,7 @@ function updateCabin() {
     brand: $("#puCabinBrand").val(),
     rooms: $("#puCabinRooms").val(),
     category_id: $("#puCabinCategory_id").val(),
-    name: ''+ $("#puCabinName").val(),
+    name: $("#puCabinName").val(),
   }
   $.ajax({
     url: urlBase + "/cabin/cabin",
@@ -139,7 +139,7 @@ function deleteCabin(input_id, input_name) {
 function openUpdatePopupCabin(input_id, input_brand, input_rooms, input_category_id, input_name) {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show", true);
-  $('#puCabinId').val(input_id);  
+  $('#puCabinId').val(input_id);
   $('#puCabinBrand').val(input_brand);
   $('#puCabinRooms').val(input_rooms);
   $('#puCabinCategory_id').val(input_category_id);
